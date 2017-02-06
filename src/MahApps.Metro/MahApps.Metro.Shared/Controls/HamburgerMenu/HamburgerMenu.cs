@@ -70,7 +70,8 @@
 
         private void HamburgerMenu_Loaded(object sender, RoutedEventArgs e)
         {
-            this.SetCurrentValue(ContentProperty, _buttonsListView?.SelectedItem ?? _optionsListView?.SelectedItem);
+			// The below prevents in-line content (a bug)
+           // this.SetCurrentValue(ContentProperty, _buttonsListView?.SelectedItem ?? _optionsListView?.SelectedItem);//
         }
     }
 }
