@@ -92,14 +92,19 @@
                                             PaneBackground="{TemplateBinding PaneBackground}"
                                             PanePlacement="{TemplateBinding PanePlacement}">
                             <controls:SplitView.Pane>
-                                <Grid x:Name="PaneGrid">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0" Height="{TemplateBinding HamburgerHeight}" />
-                                    <ListBox Name="ButtonsListView"
+                                    <Grid x:Name="PaneGrid">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0" Height="{TemplateBinding HamburgerHeight}">
+                                            <ContentControl Margin="{TemplateBinding HamburgerMargin}"
+                                            ContentTemplate="{TemplateBinding HamburgerMenuHeaderTemplate}"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            IsTabStop="False" />
+                                        </Grid>
+                                        <ListBox Name="ButtonsListView"
                                              Grid.Row="1"
                                              Width="{TemplateBinding OpenPaneLength}"
                                              AutomationProperties.Name="Menu items"
@@ -111,15 +116,15 @@
                                              SelectionMode="Single"
                                              Style="{StaticResource HamburgerListBoxStyle}"
                                              TabIndex="1">
-                                    </ListBox>
+                                        </ListBox>
 
-                                    <Grid Grid.Row="2" Visibility="{TemplateBinding OptionsVisibility}">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition />
-                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="2" Visibility="{TemplateBinding OptionsVisibility}">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
 
-                                        <ListBox Name="OptionsListView"
+                                            <ListBox Name="OptionsListView"
                                                  Grid.Row="1"
                                                  Width="{TemplateBinding OpenPaneLength}"
                                                  VerticalAlignment="Bottom"
@@ -131,7 +136,7 @@
                                                  SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedOptionsItem, Mode=TwoWay}"
                                                  Style="{StaticResource HamburgerListBoxStyle}"
                                                  TabIndex="2" />
-                                    </Grid>
+                                        </Grid>
 
                                 </Grid>
                             </controls:SplitView.Pane>

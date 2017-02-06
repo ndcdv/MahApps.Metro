@@ -22,24 +22,37 @@
         /// </summary>
         public static readonly DependencyProperty HamburgerMarginProperty = DependencyProperty.Register(nameof(HamburgerMargin), typeof(Thickness), typeof(HamburgerMenu), new PropertyMetadata(null));
 
-        /// <summary>
-        /// Identifies the <see cref="HamburgerMenuTemplate"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty HamburgerMenuTemplateProperty = DependencyProperty.Register(nameof(HamburgerMenuTemplate), typeof(DataTemplate), typeof(HamburgerMenu), new PropertyMetadata(null));
+		/// <summary>
+		/// Identifies the <see cref="HamburgerMenuTemplate"/> dependency property.
+		/// </summary>
+		public static readonly DependencyProperty HamburgerMenuTemplateProperty = DependencyProperty.Register(nameof(HamburgerMenuTemplate), typeof(DataTemplate), typeof(HamburgerMenu), new PropertyMetadata(null));
 
-        /// <summary>
-        /// Gets or sets the hamburger icon.
-        /// </summary>
-        public DataTemplate HamburgerMenuTemplate
-        {
-            get { return (DataTemplate)GetValue(HamburgerMenuTemplateProperty); }
-            set { SetValue(HamburgerMenuTemplateProperty, value); }
-        }
+		/// <summary>
+		/// Identifies the <see cref="HamburgerMenuTemplate"/> dependency property.
+		/// </summary>
+		public static readonly DependencyProperty HamburgerMenuHeaderTemplateProperty = DependencyProperty.Register(nameof(HamburgerMenuHeaderTemplate), typeof(DataTemplate), typeof(HamburgerMenu), new PropertyMetadata(null));
 
-        /// <summary>
-        /// Gets or sets main button's width
-        /// </summary>
-        public double HamburgerWidth
+		/// <summary>
+		/// Gets or sets the hamburger icon.
+		/// </summary>
+		public DataTemplate HamburgerMenuTemplate
+		{
+			get { return (DataTemplate)GetValue(HamburgerMenuTemplateProperty); }
+			set { SetValue(HamburgerMenuTemplateProperty, value); }
+		}
+		/// <summary>
+		/// Gets or sets the hamburger icon.
+		/// </summary>
+		public DataTemplate HamburgerMenuHeaderTemplate
+		{
+			get { return (DataTemplate)GetValue(HamburgerMenuHeaderTemplateProperty); }
+			set { SetValue(HamburgerMenuHeaderTemplateProperty, value); }
+		}
+
+		/// <summary>
+		/// Gets or sets main button's width
+		/// </summary>
+		public double HamburgerWidth
         {
             get { return (double)GetValue(HamburgerWidthProperty); }
             set { SetValue(HamburgerWidthProperty, value); }
